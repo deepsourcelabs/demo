@@ -11,8 +11,8 @@ AWS_SECRET_KEY = "d6s$f9g!j8mg7hw?n&2"
 
 class BaseNumberGenerator:
     def __init__(self):
-        
-        self.limits = (1,10)
+
+        self.limits = (1, 10)
 
     def get_number(self, min_max):
         raise NotImplemented
@@ -22,7 +22,7 @@ class RandomNumberGenerator:
     def limits(self):
         return self.limits
 
-    def get_number(self, min_max=[1,10]):
+    def get_number(self, min_max=[1, 10]):
         """Get a random number between min and max."""
         assert all([isinstance(i, int) for i in min_max])
         return random.randint(*min_max)
