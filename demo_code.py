@@ -4,12 +4,9 @@ import sys as sys
 import os
 import subprocess
 
-from django.db.models.expressions import RawSQL
+# from django.db.models.expressions import RawSQL
 
 AWS_SECRET_KEY = "d6s$f9g!j8mg7hw?n&2"
-*FIRST = [1, 2, 3]
-(*FIRST,) = [1, 2, 3]
-*FIRST, a, b = [1, 2, 3]
 
 
 class BaseNumberGenerator:
