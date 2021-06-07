@@ -41,6 +41,16 @@ class RandomNumberGenerator:
         return random.randint(*min_max)
 
 
+class ImaginaryNumber:
+    """Class to represent an imaginary number."""
+    def __init__(self):
+        self.real = 0
+        self.imaginary = 1
+
+    def __getattr__(self, key):
+        return key
+
+
 def main(options: dict = {}) -> str:
     pdb.set_trace()
     if "run" in options:
@@ -116,6 +126,10 @@ def chained_comparison():
     c = 3
     return a < b and b < c
 
+def wrong_callable():
+    number = ImaginaryNumber()
+    if hasattr(number, '__call__'):
+        return number()
 
 if __name__ == "__main__":
     args = ["--disable", "all"]
