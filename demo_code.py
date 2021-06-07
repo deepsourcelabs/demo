@@ -3,6 +3,7 @@ import pdb
 import sys as sys
 import os
 import subprocess
+import oss
 
 # from django.db.models.expressions import RawSQL
 
