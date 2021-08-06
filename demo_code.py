@@ -10,6 +10,7 @@ import ssl
 
 AWS_SECRET_KEY = "d6s$f9g!j8mg7hw?n&2"
 
+
 class BaseNumberGenerator:
     """Declare a method -- `get_number`."""
 
@@ -44,6 +45,7 @@ class RandomNumberGenerator:
 
 class ImaginaryNumber:
     """Class to represent an imaginary number."""
+
     def __init__(self):
         self.real = 0
         self.imaginary = 1
@@ -93,15 +95,11 @@ def tar_something():
 def bad_isinstance(initial_condition, object, other_obj, foo, bar, baz):
     if (
         initial_condition
-        and (
-            isinstance(object, int)
-            or isinstance(object, float)
-            or isinstance(object, str)
-        )
+        and isinstance(object, (int, float, str))
         and isinstance(other_obj, float)
         and isinstance(foo, str)
-        or (isinstance(bar, float) or isinstance(bar, str))
-        and (isinstance(baz, float) or isinstance(baz, int))
+        or isinstance(bar, (float, str))
+        and isinstance(baz, (float, int))
     ):
         pass
 
@@ -128,10 +126,12 @@ def chained_comparison():
     c = 3
     return a < b and b < c
 
+
 def wrong_callable():
     number = ImaginaryNumber()
-    if hasattr(number, '__call__'):
+    if hasattr(number, "__call__"):
         return number()
+
 
 if __name__ == "__main__":
     args = ["--disable", "all"]
